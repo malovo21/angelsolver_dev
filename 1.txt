@@ -1,0 +1,28 @@
+-- // imported : angelsolver.lua
+-- // imported : angelsolver.lua
+-- // imported : angelsolver.lua
+
+-- // ...
+
+Msg( "Initializing script VM...\n" )
+
+function CNPC_Surface:VPhysicsCollision(index, pEvent)
+
+ll = "SynergySteam: Failed to retrieve SteamUserStats for player '76561197960287930'! Various features such as Donor Status will be unavailable. Error Code: 2"
+-- // 18:52
+ACT_CSGO_RELOAD = 1002
+ACT_CSGO_RELOAD_START = 1003
+ACT_CSGO_RELOAD_LOOP = 1004
+ACT_CSGO_RELOAD_END = 1005
+ACT_CSGO_OPERATE = 1006
+ACT_CSGO_DEPLOY = 1007
+ACT_CSGO_CATCH = 1008
+ACT_CSGO_SILENCER_DETACH = 1009
+ACT_CSGO_SILENCER_ATTACH = 1010
+ACT_CSGO_TWITCH = 1011
+-- // 18:56
+ACT_HL2MP_WALK_ZOMBIE_01	= 1628	
+ACT_HL2MP_WALK_ZOMBIE_02	= 1629	
+ACT_HL2MP_WALK_ZOMBIE_03	= 1630	
+ACT_HL2MP_WALK_ZOMBIE_04	= 1631	
+ACT_HL2MP_WALK_ZOMBIE_05	= 1632	
