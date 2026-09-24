@@ -26,3 +26,76 @@ ACT_HL2MP_WALK_ZOMBIE_02	= 1629
 ACT_HL2MP_WALK_ZOMBIE_03	= 1630	
 ACT_HL2MP_WALK_ZOMBIE_04	= 1631	
 ACT_HL2MP_WALK_ZOMBIE_05	= 1632	
+
+-- // 12:33
+
+		int32_t m_interuptSchedule;
+		int32_t m_interruptText;
+		float m_flLastUpdateIncrement;
+		ptrdiff_t m_tStandWalkAim;
+		ptrdiff_t m_tStandRunAim;
+		ptrdiff_t m_tCrouchWalkAim;
+		uintptr_t m_bSkippedChooseEnemy;
+		uintptr_t m_bConditionsGathered;
+		float m_flPlaybackRate;
+		float m_flLastAnimationUpdate;
+		int32_t m_Activity;
+		int32_t m_IdealActivity;
+		float m_flTeleportDistanceSqr;
+		uintptr_t m_pCurrentPlayer;
+		float m_flVelocityLength2D;
+		float m_flSpeedAsPortionOfWalkSpeed;
+
+-- // 12:34
+-- // animlayer.cpp
+
+local AnimParamType_t = {
+    ANIMPARAM_UNKNOWN = 0,
+    ANIMPARAM_BOOL = 1,
+    ANIMPARAM_ENUM = 2,
+    ANIMPARAM_INT = 3,
+    ANIMPARAM_FLOAT = 4,
+    ANIMPARAM_VECTOR = 5,
+    ANIMPARAM_QUATERNION = 6,
+    ANIMPARAM_GLOBALSYMBOL = 7,
+    ANIMPARAM_COUNT = 8,
+}
+
+-- // 12:35
+
+---------------------------------------[AI_DEFINE_SCHEDULE]-----------------------------------------
+-- //-----------------------------------------------------------------------------
+-- // Purpose:
+-- // Input  :
+-- // Output :
+-- //-----------------------------------------------------------------------------
+AngelAI = {
+    schedules = {},
+    active_npc = {},
+    tasks = {},
+    conditions = {},
+    symbols = {
+        last_id = 0,
+        names = {}
+    },
+    lastInteractionID = 1000
+}
+
+-- // default 0 for users
+npc_show_schedule = ConVar("npc_show_schedule", "0", FCVAR_CLIENTDLL, "what AI_SCHEDULE think on enemy")
+
+-- // 12:36
+
+local SOUND_RADII = {
+    ["STEP"]    = 150,
+    ["WALK"]    = 350,
+    ["JUMP"]    = 550,
+    ["RELOAD"]  = 250,
+    ["COMBAT"]  = 1200,
+    ["EXPLOSION"] = 2500
+} 
+
+sv_unlag_fixstuck = ConVar("sv_unlag_fixstuck", "0", FCVAR_CHEAT, "Perform server side prediction.")
+
+-- // done....
+-- // exit angeldump.lua...
